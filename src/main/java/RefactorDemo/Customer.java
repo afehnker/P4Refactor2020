@@ -3,8 +3,6 @@ package RefactorDemo;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import java.util.Enumeration;
-import java.util.Vector;
 
 class Customer {
     private String _name;
