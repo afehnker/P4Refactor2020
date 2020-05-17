@@ -1,9 +1,9 @@
-package refactorDemo;
+package refactordemo;
 import org.junit.Test;
 
-import refactorDemo.Customer;
-import refactorDemo.Movie;
-import refactorDemo.Rental;
+import refactordemo.Customer;
+import refactordemo.Movie;
+import refactordemo.Rental;
 
 import static junit.framework.TestCase.assertEquals;
 
