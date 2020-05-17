@@ -2,7 +2,7 @@ package refactordemo;
 
 class Rental {
 	private Movie _movie;
-	int _daysRented;
+	private int _daysRented;
 
 	public Rental(Movie movie, int daysRented) {
 		_movie = movie;
@@ -17,12 +17,12 @@ class Rental {
 		return _movie;
 	}
 
-	double getCharge() {
+	public double getCharge() {
 
 		return _movie.getCharge(_daysRented);
 	}
 
-	int getFrequentRenterPoints() {
+	public int getFrequentRenterPoints() {
 
 		return _movie.getPoints(_daysRented);
 	}
