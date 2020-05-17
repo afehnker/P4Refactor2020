@@ -1,5 +1,6 @@
+package RefactorDemo;
 class Rental {
-    Movie _movie;
+    private Movie _movie;
     private int _daysRented;
 
     public Rental(Movie movie, int daysRented) {
