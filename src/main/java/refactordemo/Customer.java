@@ -30,7 +30,6 @@ class Customer {
 
 			// show figures for this rental
 			totalAmount += each.getCharge();
-			;
 		}
 		return totalAmount;
 	}
