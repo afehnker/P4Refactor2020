@@ -1,4 +1,4 @@
-package RefactorDemo;
+package refactorDemo;
 
 import java.util.Enumeration;
 import java.util.Vector;

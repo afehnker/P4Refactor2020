@@ -1,4 +1,4 @@
-package RefactorDemo;
+package refactorDemo;
 class Rental {
     private Movie _movie;
     private int _daysRented;
