@@ -30,7 +30,7 @@ class Customer {
 		return totalAmount;
 	}
 
-	private double getCharge( Rental each) {
+	private double getCharge(Rental each) {
 		double thisAmount = 0;
 		switch (each.getMovie().getPriceCode()) {
 		case Movie.REGULAR:
