@@ -23,19 +23,15 @@ class Customer {
 		double totalAmount = 0;
 		Enumeration<Rental> rentals = _rentals.elements();
 
-		while (rentals.hasMoreElements()) {
-			double thisAmount = 0;
-			Rental each = rentals.nextElement();
-			// determine amounts for each line
-			thisAmount = getCharge(thisAmount, each);
-
-			// show figures for this rental
-			totalAmount += thisAmount;
+		while (rentals.hasMoreElements()) {			
+			Rental each = rentals.nextElement();			
+			totalAmount += getCharge( each);			
 		}
 		return totalAmount;
 	}
 
-	private double getCharge(double thisAmount, Rental each) {
+	private double getCharge(Rental each) {
+		double thisAmount = 0 ;
 		switch (each.getMovie().getPriceCode()) {
 		case Movie.REGULAR:
 			thisAmount += 2;
@@ -62,14 +58,19 @@ class Customer {
 
 			Rental each = rentals.nextElement();
 
-			// add frequent renter points
-			frequentRenterPoints++;
-
-			// add bonus for a two day new release rental
-			if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
-				frequentRenterPoints++;
-			// show figures for this rental
+			frequentRenterPoints += getFrequentPoints( each);
 		}
+		return frequentRenterPoints;
+	}
+
+	private int getFrequentPoints( Rental each) {
+		// add frequent renter points
+		int frequentRenterPoints=1;
+
+		// add bonus for a two day new release rental
+		if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
+			frequentRenterPoints++;
+		// show figures for this rental
 		return frequentRenterPoints;
 	}
 
