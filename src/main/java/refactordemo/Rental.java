@@ -1,7 +1,7 @@
 package refactordemo;
 class Rental {
     private Movie _movie;
-    private int _daysRented;
+    int _daysRented;
 
     public Rental(Movie movie, int daysRented) {
         _movie = movie;
@@ -16,34 +16,13 @@ class Rental {
         return _movie;
     }
 
-	double getCharge() {
-		double thisAmount = 0;
-		switch (_movie.getPriceCode()) {
-		case Movie.REGULAR:
-			thisAmount += 2;
-			if (getDaysRented() > 2)
-				thisAmount += (_daysRented - 2) * 1.5;
-			break;
-		case Movie.NEW_RELEASE:
-			thisAmount += _daysRented * 3;
-			break;
-		case Movie.CHILDRENS:
-			thisAmount += 1.5;
-			if (getDaysRented() > 3)
-				thisAmount += (_daysRented - 3) * 1.5;
-			break;
-		}
-		return thisAmount;
+	double getCharge() {		
+		return _movie.getPrice(_daysRented);
 	}
 
 	int getFrequentPoints() {
 		// add frequent renter points
-		int frequentRenterPoints=1;
-	
-		// add bonus for a two day new release rental
-		if ((_movie.getPriceCode() == Movie.NEW_RELEASE) && _daysRented > 1)
-			frequentRenterPoints++;
-		// show figures for this rental
-		return frequentRenterPoints;
+		
+		return _movie.getPoints(_daysRented);
 	}
 }
