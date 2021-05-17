@@ -30,7 +30,6 @@ public class CustomerTest {
 
         Pete.addRental(new Rental(Shouf,2));
         Pete.addRental(new Rental(Black,1));
-
         
         assertEquals(3,Pete.getPoints());
     }
