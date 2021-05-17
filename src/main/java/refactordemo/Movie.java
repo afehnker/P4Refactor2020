@@ -18,7 +18,6 @@ public class Movie  {
 
     public void  setPriceCode(int newPrice){
         _priceCode = newPrice;
-
     }
 
     public String getTitle(){
